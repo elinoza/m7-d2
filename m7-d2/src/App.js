@@ -1,26 +1,20 @@
 import React, { Component } from "react";
 
 import Home from "./components/Home.jsx";
-
+import Details from "./components/Details.jsx";
 import { Route, Link } from "react-router-dom";
 
 class App extends Component {
   state = {
-    searchParams:{
+    
       location:null,
       position:null
-    }
+   
   
   };
 
-  handleSearchParams = (position,location) => {
-    // this.setState({
-    //   ...this.state,
-    //   cart: {
-    //     ...this.state.cart,
-    //     products: [...this.state.cart.products, id],
-    //   },
-    // });
+  searchParams = (position,location) => {
+   this.setState({ position:position, location:location})
   };
   handleSearchPosition = (string) => {
     // this.setState({
@@ -66,20 +60,20 @@ class App extends Component {
             path="/"
             exact
             render={(props) => (
-              <Home {...props} searchParams={this.handleSearchParams} searchPosition={this.handleSearchPosition}  />
+              <Home {...props} searchParams={this.searchParams} searchPosition={this.handleSearchPosition}  />
             )}
           />
-          {/* <Route
+          <Route
             path="/details"
             exact
             render={(props) => (
               <Details
                 {...props}
-                cart={this.state.cart.products}
-                removeFromCart={this.handleRemoveFromCart}
+               location={this.state.location}
+               position={this.position}
               />
             )}
-          /> */}
+          />
         </div>
       </div>
     );
