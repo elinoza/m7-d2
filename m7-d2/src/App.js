@@ -16,32 +16,8 @@ class App extends Component {
   searchParams = (position,location) => {
    this.setState({ position:position, location:location})
   };
-  handleSearchPosition = (string) => {
-    // this.setState({
-    //   ...this.state,
-    //   cart: {
-    //     ...this.state.cart,
-    //     products: [...this.state.cart.products, id],
-    //   },
-    // });
-  };
 
-  // handleRemoveFromCart = (id) => {
-  //   const bookToRemove = this.state.cart.products.findIndex(
-  //     (bookId) => bookId === id
-  //   );
 
-  //   this.setState({
-  //     ...this.state,
-  //     cart: {
-  //       ...this.state.cart,
-  //       products: [
-  //         ...this.state.cart.products.slice(0, bookToRemove),
-  //         ...this.state.cart.products.slice(bookToRemove + 1),
-  //       ],
-  //     },
-  //   });
-  // };
 
   render() {
     return (
